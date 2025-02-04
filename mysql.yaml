@@ -3,10 +3,10 @@
   become: yes
   tasks:
   - name: install mysql libraries
-    ansible.builtin.pip:  
+    ansible.builtin.apt:
        name:  PyMySQL
        executable: pip 3.9
-       
+
   - name: install mysql server
     ansible.builtin.package:  
       name: mysql-server
