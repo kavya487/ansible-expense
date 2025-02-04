@@ -27,7 +27,8 @@
       login_password: ExpenseApp@1
       login_host: mysql.kavyadev.shop
     register: mysql_info
-  
+    ignoreerror: true
+
   - name: print output
     ansible.builtin.debug:
       msg: "MySql info : {{mysql_info}}"
