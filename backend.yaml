@@ -44,10 +44,10 @@
       src: backend.service
       dest: /etc/systemd/system/backend.service
     
-  - name: install python libs
-    ansible.builtin.pip:
-      name: PyMySql
-      executable: pip3. 9
+  # - name: install python libs
+  #   ansible.builtin.pip:
+  #     name: PyMySql
+  #     executable: pip3. 9
 
   - name: import mysql data
     community.mysql.mysql_db:
@@ -57,3 +57,10 @@
       login_password: ExpenseApp@1
       login_host: mysql.kavyadev.shop
       target: /app/schema/backend.sql
+
+  - name: deamon reload service
+    ansible.builtin.systemd_service:
+      enabled: true
+      state: restarted
+      daemon_reload: true
+      name: backend
