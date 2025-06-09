@@ -11,6 +11,11 @@
       name: mysqld
       state: started
       enabled: yes
+  - name: install mysql  librart
+    ansible.builtin.pip:
+      name: PyMySQL
+      executable: pip3.9
+
   - name: setup root password
     community.mysql.mysql_info:
       login_user: root
@@ -21,7 +26,3 @@
   - name: print ec2_info
     ansible.builtin.debug:
       msg: print the o/p {{ mysql_info }}
-  - name: install mysql  librart
-    ansible.builtin.pip:
-      name: PyMySQL
-      executable: pip3.9
