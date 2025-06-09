@@ -35,9 +35,10 @@
       src: /tmp/backend.zip
       dest: /app
       remote_src: yes
+
   - name: install dependecies
     community.general.npm:
-      src: /app
+      path: /app
 
   - name: copy the file
     ansible.builtin.copy:
