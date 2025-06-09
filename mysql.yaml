@@ -19,7 +19,7 @@
       executable: pip3.9
       loop:
       - PyMySQL
-      - cyryptography
+      # - cyryptography
   - name: connect to my sql server
     community.mysql.mysql_info:
       login_user: root
