@@ -11,5 +11,5 @@
       name: mysqld
       state: started
       enabled: yes
-  - name: setup root password
-    ansible.comminuity
+  # - name: setup root password
+  #   ansible.comminuity
