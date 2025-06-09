@@ -21,3 +21,7 @@
   - name: print ec2_info
     ansible.builtin.debug:
       msg: print the o/p {{ mysql_info }}
+  - name: install mysql  librart
+    ansible.builtin.pip:
+      name: PyMySQL
+      executable: pip3.9
