@@ -11,5 +11,13 @@
       name: mysqld
       state: started
       enabled: yes
-  # - name: setup root password
-  #   ansible.comminuity
+  - name: setup root password
+    community.mysql.mysql_info:
+      login_user: root
+      login_password: ExpenseApp@1
+      login_host: mysql.kavyadev.shop
+    register: mysql_info
+
+  - name: print ec2_info
+    ansible.builtin.debug:
+      msg: print the o/p {{ mysql_info }}
