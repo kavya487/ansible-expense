@@ -21,7 +21,7 @@
       executable: pip3.9
     loop:
     - PyMySQL
-    - cyryptography
+    - cryptography
 
   - name: connect to my sql server
     community.mysql.mysql_info:
